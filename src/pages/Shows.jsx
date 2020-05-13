@@ -24,6 +24,11 @@ const ShowsContainer = styled.div`
 	&::-webkit-scrollbar {
 		display: none;
 	}
+	@media (max-width: 768px) {
+		height: 80vh;
+		margin: 10vh 0;
+		padding-top: 0vh;
+	}
 `;
 
 const ShowTile = styled.div`

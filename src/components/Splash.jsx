@@ -30,6 +30,10 @@ const Title = styled.div`
     justify-content: center;
 	line-height: 1.8;
 	${fadeInAnim};
+	@media (max-width: 768px) {
+		font-size: 4.375em;
+		line-height: 7;
+	}
 `;
 
 const props = {

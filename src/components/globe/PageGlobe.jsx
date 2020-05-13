@@ -1,19 +1,13 @@
 import React from "react";
 import styled, { keyframes, css } from "styled-components";
-import { Canvas } from "react-three-fiber";
 import { fadeInUp } from "react-animations";
+
+import { CanvasProvider } from "../../context/CanvasContext";
 
 import Scene from "./Scene";
 
 const fadeInAnimation = keyframes`${fadeInUp}`;
 let fadeInAnim = css`animation: 3s ${fadeInAnimation};`;
-
-let cc = css`
-	width: 100vw;
-	height: 100vh;
-	position: fixed;
-	z-index: -1;
-`;
 
 const FwContainer = styled.div`
 	${(props) => (props.zIndex ? "z-index: -1" : "")};
@@ -23,6 +17,9 @@ const FwContainer = styled.div`
 	align-items: ${(props) => (props.alignItems ? props.alignItems : "flex-end")};
 	${(props) => (props.bottom ? "bottom: -65%" : "")};
 	${fadeInAnim};
+	@media (max-width: 768px) {
+		${(props) => (props.bottom ? "bottom: -75%" : "")};
+	}
 `;
 
 export default function PageGlobe(props) {
@@ -30,9 +27,9 @@ export default function PageGlobe(props) {
 
 	return (
 		<FwContainer gHeight={height} bottom={bottom} alignItems={alignItems} zIndex={zIndex}>
-			<Canvas className={cc}>
+			<CanvasProvider>
 				<Scene />
-			</Canvas>
+			</CanvasProvider>
 		</FwContainer>
 	);
 }

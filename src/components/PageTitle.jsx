@@ -34,6 +34,9 @@ const PageTitleContainer = styled.div`
 	top: 0;
 	display: flex;
 	align-items: center;
+	@media (max-width: 768px) {
+		font-size: 10.375em;
+	}
 `;
 
 export default function PageTitle(props) {
