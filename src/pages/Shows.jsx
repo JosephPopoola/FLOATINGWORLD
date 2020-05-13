@@ -14,11 +14,9 @@ const ShowsContainer = styled.div`
 	flex-direction: row;
 	height: 70vh;
 	margin: 15vh 0;
-	padding-top: 10vh;
 	align-self: center;
 	overflow-x: scroll;
 	overflow-y: hidden;
-	// white-space: nowrap;
 	z-index: 0;
 	-webkit-overflow-scrolling: touch;
 	&::-webkit-scrollbar {

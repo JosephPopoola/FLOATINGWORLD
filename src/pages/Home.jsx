@@ -11,10 +11,13 @@ let fadeInAnim = css`animation: 4s ${fadeInAnimation};`;
 
 const HomeContainer = styled.div`
 	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
+	z-index: 0;
+	top: 10vh;
+	box-sizing: border-box;
+	padding-bottom: 10vh;
+	height: 90vh;
 	width: 100%;
+	left: 0;
 	display: flex;
 	flex-direction: column;
 	${fadeInAnim};

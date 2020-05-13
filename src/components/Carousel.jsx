@@ -13,11 +13,13 @@ const CarouContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	height: 100vh;
+	position: absolute;
+	height: 90vh;
+	box-sizing: border-box;
+	padding-bottom: 10vh;
 	width: 100%;
 	overflow-x: scroll;
 	overflow-y: hidden;
-	z-index: 0;
 	-webkit-overflow-scrolling: touch;
 	&::-webkit-scrollbar {
 		display: none;

@@ -10,7 +10,7 @@ const ModalContainer = styled.div`
 	max-height: 100vh;
 	max-width: 100vw;
 	background-color: black;
-	z-index: 99999;
+	z-index: 99999; !imprortant;
 	color: white;
 	display: flex;
 	align-items: center;

@@ -23,15 +23,17 @@ const fadeInAnimation = keyframes`
 let fadeInAnim = css`animation: 3s ${fadeInAnimation};`;
 
 const PageTitleContainer = styled.div`
-	position: absolute;
+	position: fixed;
 	font-size: 14.375em;
 	${fadeInAnim};
 	opacity: 0.5;
 	left: 50vw;
 	z-index: -1;
-	height: 100vh;
+	height: 90vh;
+	top: 10vh;
+	box-sizing: border-box;
+	padding-bottom: 10vh;
 	width: 100%;
-	top: 0;
 	display: flex;
 	align-items: center;
 	@media (max-width: 768px) {
