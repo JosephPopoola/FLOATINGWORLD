@@ -1,13 +1,11 @@
-import React from 'react';
-import { Canvas } from 'react-three-fiber';
-import styled from 'styled-components';
-import { slideInUp, fadeIn } from 'react-animations';
-import { createAnimation } from '../helpers/createAnimation';
+import React from "react";
+import styled from "styled-components";
+import { fadeIn } from "react-animations";
+import { createAnimation } from "../helpers/createAnimation";
 
-import Scene from './globe/Scene';
+import PageGlobe from "../components/globe/PageGlobe";
 
-let fadeInUpAnim = createAnimation(slideInUp, '4s');
-let fadeInAnim = createAnimation(fadeIn, '3s');
+let fadeInAnim = createAnimation(fadeIn, "3s");
 
 const SplashContainer = styled.div`
 	min-height: 100vh;
@@ -34,23 +32,18 @@ const Title = styled.div`
 	${fadeInAnim};
 `;
 
-const FwContainer = styled.div`
-	width: 100%;
-	height: 70%;
-	position: absolute;
-	align-items: center;
-	${fadeInUpAnim};
-`;
+const props = {
+	height: "70vh",
+	alignItems: "center",
+	bottom: false,
+	zIndex: false
+};
 
 export default function Splash() {
 	return (
 		<SplashContainer>
 			<Title> FLOATING WORLD </Title>
-			<FwContainer>
-				<Canvas>
-					<Scene />
-				</Canvas>
-			</FwContainer>
+			<PageGlobe props={props} />
 		</SplashContainer>
 	);
 }

@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import { fadeOut } from 'react-animations';
-import { createAnimation } from './helpers/createAnimation';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { fadeOut } from "react-animations";
+import { createAnimation } from "./helpers/createAnimation";
 
-import Nav from './components/Nav';
-import Splash from './components/Splash';
+import Nav from "./components/Nav";
+import Splash from "./components/Splash";
 
-import './App.css';
+import "./App.css";
 
-let fadeOutAnim = createAnimation(fadeOut, '1.2s');
+let fadeOutAnim = createAnimation(fadeOut, "1.2s");
 
 const SplashContainer = styled.div`
 	background-color: black;

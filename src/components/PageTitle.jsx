@@ -1,6 +1,5 @@
-import React from 'react';
-import styled, { keyframes, css } from 'styled-components';
-import { fadeInUp } from 'react-animations';
+import React from "react";
+import styled, { keyframes, css } from "styled-components";
 
 const fadeInAnimation = keyframes`
     from { 
@@ -20,6 +19,7 @@ const fadeInAnimation = keyframes`
         transform: translateY(0);
     }
 `;
+
 let fadeInAnim = css`animation: 3s ${fadeInAnimation};`;
 
 const PageTitleContainer = styled.div`

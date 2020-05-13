@@ -5,9 +5,8 @@ import { Globe } from './Globe';
 
 function Scene() {
 	const { camera } = useThree();
-
-	camera.fov = 45;
 	camera.aspect = window.innerWidth / window.innerHeight;
+
 	camera.near = 0.1;
 	camera.far = 1000;
 

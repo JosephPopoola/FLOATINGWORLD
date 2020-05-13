@@ -1,12 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
-import { fadeInUp } from 'react-animations';
-import { createAnimation } from '../helpers/createAnimation';
+import React from "react";
+import styled from "styled-components";
+import { fadeInUp } from "react-animations";
+import { createAnimation } from "../helpers/createAnimation";
 
-import { SHOWS } from '../data/data';
-import PageTitle from '../components/PageTitle';
+import { SHOWS } from "../data/data";
+import PageTitle from "../components/PageTitle";
+import PageGlobe from "../components/globe/PageGlobe";
 
-let fadeInAnim = createAnimation(fadeInUp, '3s');
+let fadeInAnim = createAnimation(fadeInUp, "3s");
 
 const ShowsContainer = styled.div`
 	display: flex;
@@ -50,8 +51,14 @@ const ShowTile = styled.div`
 	animation-delay: 1.5s;
 `;
 
-const wOptions = [ '30vw', '35vw', '45vw', '42vw', '33vw' ];
-const hOptions = [ '32vh', '44vh', '51vh', '59vh' ];
+const wOptions = [ "30vw", "35vw", "45vw", "42vw", "33vw" ];
+const hOptions = [ "32vh", "44vh", "51vh", "59vh" ];
+
+const props = {
+	alignItems: "center",
+	bottom: true,
+	zIndex: true
+};
 
 export default function Shows() {
 	const iframeContainer = function(iframe) {
@@ -75,6 +82,7 @@ export default function Shows() {
 				);
 			})}
 			<div className="end-of-scroll">E</div>
+			<PageGlobe props={props} />
 		</ShowsContainer>
 	);
 }
