@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const HomeTileContainer = styled.div`
 	height: 45vh;
@@ -8,7 +8,8 @@ const HomeTileContainer = styled.div`
 	width: 45vw;
 	max-width: 45vw;
 	min-width: 45vw;
-	background-color: gray;
+	background-color: #333;
+	color: white;
 	margin: 0 7.5vw;
 	display: inline-block;
 	&:last-child {
@@ -16,6 +17,19 @@ const HomeTileContainer = styled.div`
 	}
 	cursor: pointer;
 	background-image: url(${(props) => props.img});
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
+
+const TileTitle = styled.div`
+	font-size: 2em;
+	font-weight: 300;
+	@media (max-width: 768px) {
+		font-size: 1em;
+		transform: rotate(-90deg);
+		text-align: center;
+	}
 `;
 
 export default function HomeTile(props) {
@@ -23,8 +37,7 @@ export default function HomeTile(props) {
 
 	return (
 		<HomeTileContainer img={item.img} className="drop-shadow" onClick={() => click(item)}>
-			<div>{item.id}</div>
-			<div>{item.name}</div>
+			<TileTitle>{item.title}</TileTitle>
 		</HomeTileContainer>
 	);
 }

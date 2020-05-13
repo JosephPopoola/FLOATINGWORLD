@@ -1,42 +1,40 @@
 export const ITEMS = [
 	{
-		title: 'test11',
-		link: '',
-		img:
-			'https://images.unsplash.com/photo-1581508525322-f5d437639ff9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
-		text: '',
+		title: "FWR 003 - OUT NOW!",
+		link: "",
+		img: "",
+		text: "PLAY LESS GAMES - LISTEN TO YOUR SPIRIT AND BANG SOME FLOATING WORLD",
 		id: 0
 	},
 	{
-		title: 'PYLS - OTTO REIGN',
-		link: '',
-		img:
-			'https://images.unsplash.com/photo-1535402803947-a950d5f7ae4b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1127&q=80',
-		text: 'PROTECT YOUR LOCAL SINNERS - OTTO REIGN \n OUT NOW!',
+		title: "PYLS - OTTO REIGN",
+		link: "",
+		img: "",
+		text: "PROTECT YOUR LOCAL SINNERS - OTTO REIGN \n OUT NOW!",
 		id: 1
 	},
 	{
-		title: 'test3',
-		link: '',
+		title: "test3",
+		link: "",
 		img:
-			'https://images.unsplash.com/photo-1516607593959-e5c0b43bc52c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80',
-		text: '',
+			"https://images.unsplash.com/photo-1516607593959-e5c0b43bc52c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80",
+		text: "",
 		id: 2
 	},
 	{
-		title: 'test4',
-		link: '',
+		title: "test4",
+		link: "",
 		img:
-			'https://images.unsplash.com/photo-1546825094-66e983c4c7de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80',
-		text: '',
+			"https://images.unsplash.com/photo-1546825094-66e983c4c7de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+		text: "",
 		id: 3
 	},
 	{
-		title: 'test5',
-		link: '',
+		title: "test5",
+		link: "",
 		img:
-			'https://images.unsplash.com/photo-1529126894674-8dd7cb884766?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
-		text: '',
+			"https://images.unsplash.com/photo-1529126894674-8dd7cb884766?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+		text: "",
 		id: 4
 	}
 ];

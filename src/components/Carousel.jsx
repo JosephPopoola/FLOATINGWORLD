@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import styled, { keyframes, css } from 'styled-components';
-import { fadeInUp } from 'react-animations';
+import React, { useState } from "react";
+import styled, { keyframes, css } from "styled-components";
+import { fadeInUp } from "react-animations";
 
-import HomeTile from './HomeTile';
-import Modal from './Modal';
-import { ITEMS } from '../data/data';
+import HomeTile from "./HomeTile";
+import Modal from "./Modal";
+import { ITEMS } from "../data/data";
 
 const fadeInAnimation = keyframes`${fadeInUp}`;
 let fadeInAnim = css`animation: 3s ${fadeInAnimation};`;
@@ -26,6 +26,8 @@ const CarouContainer = styled.div`
 	${fadeInAnim} animation-fill-mode: forwards;
 	animation-delay: .5s;
 `;
+
+const ModalEntry = styled.div`padding: 2vh 0;`;
 
 // Boxes static as image behind slightly moves, panoramic effect (I believe)
 // Each home tile needs a click func that triggers the show modal state
@@ -53,9 +55,9 @@ export default function Carousel() {
 			<div className="end-of-scroll">E</div>
 			{showModal && (
 				<Modal close={toggleModal}>
-					<div>{currentItem.title}</div>
-					<div>{currentItem.text}</div>
-					<div>{currentItem.link}</div>
+					<ModalEntry>{currentItem.title}</ModalEntry>
+					<ModalEntry>{currentItem.text}</ModalEntry>
+					<ModalEntry>{currentItem.link}</ModalEntry>
 				</Modal>
 			)}
 		</CarouContainer>

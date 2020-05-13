@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { fadeIn } from "react-animations";
 import { createAnimation } from "../helpers/createAnimation";
 
@@ -12,7 +12,6 @@ let fadeInAnim = createAnimation(fadeIn, "3s");
 
 const NavBar = styled.div`
 	position: absolute;
-	z-index: 9999;
 	display: flex;
 	${fadeInAnim};
 `;
@@ -42,7 +41,7 @@ export default function Nav() {
 				<Route path="/joinus">
 					<Joinus />
 				</Route>
-				<Route path="/">
+				<Route exact path="/">
 					<Home />
 				</Route>
 			</Switch>
