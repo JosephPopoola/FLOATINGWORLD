@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components';
+import { keyframes, css } from "styled-components";
 
 export const createAnimation = function(_animation, _duration) {
 	const animation = keyframes`${_animation}`;
