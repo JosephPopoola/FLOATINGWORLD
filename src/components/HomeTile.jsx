@@ -20,6 +20,7 @@ const HomeTileContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 `;
 
 const TileTitle = styled.div`

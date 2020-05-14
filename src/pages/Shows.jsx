@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { fadeInUp } from "react-animations";
 import { createAnimation } from "../helpers/createAnimation";
+import HorizontalScroll from "react-scroll-horizontal";
 
 import { SHOWS } from "../data/data";
 import PageTitle from "../components/PageTitle";
@@ -73,18 +74,21 @@ export default function Shows() {
 	return (
 		<ShowsContainer>
 			<PageTitle>SHOWS</PageTitle>
-			{SHOWS.map((show, idx) => {
-				return (
-					<ShowTile
-						key={idx}
-						className="drop-shadow"
-						width={wOptions[Math.floor(Math.random() * wOptions.length)]}
-						height={hOptions[Math.floor(Math.random() * hOptions.length)]}
-						dangerouslySetInnerHTML={iframeContainer(show)}
-					/>
-				);
-			})}
+			<HorizontalScroll pageLock={true}>
+				{SHOWS.map((show, idx) => {
+					return (
+						<ShowTile
+							key={idx}
+							className="drop-shadow"
+							width={wOptions[Math.floor(Math.random() * wOptions.length)]}
+							height={hOptions[Math.floor(Math.random() * hOptions.length)]}
+							dangerouslySetInnerHTML={iframeContainer(show)}
+						/>
+					);
+				})}
+			</HorizontalScroll>
 			<div className="end-of-scroll">E</div>
+
 			<PageGlobe props={props} />
 		</ShowsContainer>
 	);

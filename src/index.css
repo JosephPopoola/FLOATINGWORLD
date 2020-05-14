@@ -73,3 +73,13 @@ ul {
 canvas {
 	display: block; /* fix necessary to remove space at bottom of canvas */
 }
+
+.styled-horizontal-scroll > div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+iframe {
+	overflow: hidden;
+}

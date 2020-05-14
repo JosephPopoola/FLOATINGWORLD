@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes, css } from "styled-components";
 import { fadeInUp } from "react-animations";
+import HorizontalScroll from "react-scroll-horizontal";
 
 import HomeTile from "./HomeTile";
 import Modal from "./Modal";
@@ -43,17 +44,13 @@ export default function Carousel() {
 		setShowModal(!showModal);
 	};
 
-	const horizontalScroll = function(e) {
-		// console.log(e);
-		// if (e.deltaY > 0) item.scrollLeft += 100;
-		// else item.scrollLeft -= 100;
-	};
-
 	return (
-		<CarouContainer onWheel={(e) => horizontalScroll(e)}>
-			{ITEMS.map((item, idx) => {
-				return <HomeTile key={idx} item={item} click={toggleModal} />;
-			})}
+		<CarouContainer>
+			<HorizontalScroll className="styled-horizontal-scroll">
+				{ITEMS.map((item, idx) => {
+					return <HomeTile tileRef key={idx} item={item} click={toggleModal} />;
+				})}
+			</HorizontalScroll>
 			<div className="end-of-scroll">E</div>
 			{showModal && (
 				<Modal close={toggleModal}>
