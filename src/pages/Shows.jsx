@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { fadeInUp } from "react-animations";
 import { createAnimation } from "../helpers/createAnimation";
@@ -7,6 +7,7 @@ import HorizontalScroll from "react-scroll-horizontal";
 import { SHOWS } from "../data/data";
 import PageTitle from "../components/PageTitle";
 import PageGlobe from "../components/globe/PageGlobe";
+import useWindowSize from "../hooks/useWindowSize";
 
 let fadeInAnim = createAnimation(fadeInUp, "3s");
 
@@ -65,15 +66,42 @@ const props = {
 };
 
 export default function Shows() {
+	const [ isMobile, setIsMobile ] = useState(true);
+	const size = useWindowSize();
+
 	const iframeContainer = function(iframe) {
 		return {
 			__html: iframe
 		};
 	};
 
-	return (
-		<ShowsContainer>
-			<PageTitle>SHOWS</PageTitle>
+	useEffect(() => {
+		if (size.width > 800) {
+			setIsMobile(false);
+		}
+	});
+
+	function Show(props) {
+		const isMobile = props.isMobile;
+		if (isMobile) {
+			return (
+				<span>
+					{SHOWS.map((show, idx) => {
+						return (
+							<ShowTile
+								key={idx}
+								className="drop-shadow"
+								width={wOptions[Math.floor(Math.random() * wOptions.length)]}
+								height={hOptions[Math.floor(Math.random() * hOptions.length)]}
+								dangerouslySetInnerHTML={iframeContainer(show)}
+							/>
+						);
+					})}
+					<div className="end-of-scroll">E</div>);
+				</span>
+			);
+		}
+		return (
 			<HorizontalScroll pageLock={true}>
 				{SHOWS.map((show, idx) => {
 					return (
@@ -86,9 +114,15 @@ export default function Shows() {
 						/>
 					);
 				})}
+				<div className="end-of-scroll">E</div>
 			</HorizontalScroll>
-			<div className="end-of-scroll">E</div>
+		);
+	}
 
+	return (
+		<ShowsContainer className="hScroll">
+			<PageTitle>SHOWS</PageTitle>
+			<Show isMobile={isMobile} />
 			<PageGlobe props={props} />
 		</ShowsContainer>
 	);

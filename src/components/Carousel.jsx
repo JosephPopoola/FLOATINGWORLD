@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled, { keyframes, css } from "styled-components";
 import { fadeInUp } from "react-animations";
 import HorizontalScroll from "react-scroll-horizontal";
@@ -6,6 +6,8 @@ import HorizontalScroll from "react-scroll-horizontal";
 import HomeTile from "./HomeTile";
 import Modal from "./Modal";
 import { ITEMS } from "../data/data";
+
+import useWindowSize from "../hooks/useWindowSize";
 
 const fadeInAnimation = keyframes`${fadeInUp}`;
 let fadeInAnim = css`animation: 3s ${fadeInAnimation};`;
@@ -38,20 +40,45 @@ const ModalEntry = styled.div`padding: 2vh 0;`;
 export default function Carousel() {
 	const [ currentItem, setCurrentItem ] = useState({});
 	const [ showModal, setShowModal ] = useState(false);
+	const [ isMobile, setIsMobile ] = useState(true);
+	const size = useWindowSize();
 
 	const toggleModal = function(item) {
 		setCurrentItem(item);
 		setShowModal(!showModal);
 	};
 
-	return (
-		<CarouContainer>
+	useEffect(() => {
+		if (size.width > 800) {
+			setIsMobile(false);
+		}
+	});
+
+	function Item(props) {
+		const isMobile = props.isMobile;
+		if (isMobile) {
+			return (
+				<span>
+					{ITEMS.map((item, idx) => {
+						return <HomeTile tileRef key={idx} item={item} click={toggleModal} />;
+					})}
+					<div className="end-of-scroll">E</div>
+				</span>
+			);
+		}
+		return (
 			<HorizontalScroll className="styled-horizontal-scroll">
 				{ITEMS.map((item, idx) => {
 					return <HomeTile tileRef key={idx} item={item} click={toggleModal} />;
 				})}
+				<div className="end-of-scroll">E</div>
 			</HorizontalScroll>
-			<div className="end-of-scroll">E</div>
+		);
+	}
+
+	return (
+		<CarouContainer>
+			<Item isMobile={isMobile} />
 			{showModal && (
 				<Modal close={toggleModal}>
 					<ModalEntry>{currentItem.title}</ModalEntry>

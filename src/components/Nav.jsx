@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { fadeIn } from "react-animations";
 import { createAnimation } from "../helpers/createAnimation";
 
