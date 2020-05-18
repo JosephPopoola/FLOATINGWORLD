@@ -85,7 +85,7 @@ export default function Shows() {
 		const isMobile = props.isMobile;
 		if (isMobile) {
 			return (
-				<span>
+				<div className="inherit">
 					{SHOWS.map((show, idx) => {
 						return (
 							<ShowTile
@@ -98,7 +98,7 @@ export default function Shows() {
 						);
 					})}
 					<div className="end-of-scroll">E</div>);
-				</span>
+				</div>
 			);
 		}
 		return (

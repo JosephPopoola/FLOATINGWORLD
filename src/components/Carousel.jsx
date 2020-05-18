@@ -58,12 +58,12 @@ export default function Carousel() {
 		const isMobile = props.isMobile;
 		if (isMobile) {
 			return (
-				<span>
+				<div className="inherit">
 					{ITEMS.map((item, idx) => {
 						return <HomeTile tileRef key={idx} item={item} click={toggleModal} />;
 					})}
 					<div className="end-of-scroll">E</div>
-				</span>
+				</div>
 			);
 		}
 		return (

@@ -83,3 +83,7 @@ canvas {
 iframe {
 	overflow: hidden;
 }
+
+.inherit {
+	display: inherit;
+}
