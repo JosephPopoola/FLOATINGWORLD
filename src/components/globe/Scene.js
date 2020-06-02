@@ -1,9 +1,8 @@
 import React from 'react';
 import { useThree } from 'react-three-fiber';
 import Lights from './Lights';
-import { Globe } from './Globe';
 
-function Scene() {
+function Scene(props) {
 	const { camera } = useThree();
 	camera.aspect = window.innerWidth / window.innerHeight;
 
@@ -30,7 +29,7 @@ function Scene() {
 				/>
 			))}
 			<React.Suspense fallback={<mesh />}>
-				<Globe />
+				{props.children}
 			</React.Suspense>
 		</>
 	);

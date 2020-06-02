@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useFrame } from "react-three-fiber";
-import EarthClouds from "../../assets/earthcloudmaptrans.jpg";
-import urf from "../../assets/URF.jpeg";
+import EarthClouds from "../../assets/URF4.jpeg";
+import urf from "../../assets/URF4.jpeg";
 import { useLoader } from "react-three-fiber";
 import { TextureLoader, SphereGeometry, MeshPhongMaterial, LinearFilter } from "three";
 
@@ -39,8 +39,8 @@ export function Globe(props) {
 	};
 	const atmosMat = new MeshPhongMaterial(atmosMatParams);
 
-	useFrame(() => (fwMesh.current.rotation.y += 0.001));
-	useFrame(() => (cloudMesh.current.rotation.y = cloudMesh.current.rotation.y += 0.00111));
+	useFrame(() => (fwMesh.current.rotation.y += 0.0001));
+	useFrame(() => (cloudMesh.current.rotation.y = cloudMesh.current.rotation.y += 0.000111));
 
 	return (
 		<group position={[ 0, 0.1, 0.1 ]}>

@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const ModalContainer = styled.div`
+export const ModalContainer = styled.div`
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -22,7 +21,7 @@ const ModalContainer = styled.div`
 	max-width: 100%;
 `;
 
-const CloseButton = styled.div`
+export const CloseButton = styled.div`
 	color: red;
 	cursor: pointer;
 	position: fixed;
@@ -30,14 +29,3 @@ const CloseButton = styled.div`
 	margin: 0 auto;
 	z-index: 999999;
 `;
-
-export default function Modal(props) {
-	const { close } = props;
-
-	return (
-		<ModalContainer>
-			<CloseButton onClick={close}>X</CloseButton>
-			{props.children}
-		</ModalContainer>
-	);
-}

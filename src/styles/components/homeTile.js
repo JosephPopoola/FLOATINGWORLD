@@ -1,7 +1,10 @@
-import React from "react";
 import styled from "styled-components";
+import { fadeInUp } from "react-animations";
+import { createAnimation } from "../../helpers/createAnimation";
 
-const HomeTileContainer = styled.div`
+let fadeInAnim = createAnimation(fadeInUp, "3s");
+
+export const HomeTileContainer = styled.div`
 	height: 45vh;
 	min-height: 45vh;
 	max-height: 45vh;
@@ -21,9 +24,10 @@ const HomeTileContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	${fadeInAnim} animation-fill-mode: forwards;
 `;
 
-const TileTitle = styled.div`
+export const TileTitle = styled.div`
 	font-size: 2em;
 	font-weight: 300;
 	@media (max-width: 768px) {
@@ -32,13 +36,3 @@ const TileTitle = styled.div`
 		text-align: center;
 	}
 `;
-
-export default function HomeTile(props) {
-	const { item, click } = props;
-
-	return (
-		<HomeTileContainer img={item.img} className="drop-shadow" onClick={() => click(item)}>
-			<TileTitle>{item.title}</TileTitle>
-		</HomeTileContainer>
-	);
-}

@@ -1,13 +1,9 @@
-import React from "react";
 import styled from "styled-components";
 import { fadeIn } from "react-animations";
-import { createAnimation } from "../helpers/createAnimation";
-
-import PageGlobe from "../components/globe/PageGlobe";
-
+import { createAnimation } from "../../helpers/createAnimation";
 let fadeInAnim = createAnimation(fadeIn, "3s");
 
-const SplashContainer = styled.div`
+export const SplashContainer = styled.div`
 	min-height: 100vh;
 	height: 100%;
 	min-width: 100vw;
@@ -21,7 +17,7 @@ const SplashContainer = styled.div`
 	position: relative;
 `;
 
-const Title = styled.div`
+export const Title = styled.div`
     color: white
     margin: 20vh 30vw;
     font-size: 14.375em;
@@ -34,20 +30,5 @@ const Title = styled.div`
 		font-size: 4.375em;
 		line-height: 7;
 	}
+	animation: float ${(props) => props.floatTime} ease-in-out infinite ${(props) => (props.reverse ? "reverse" : "")};
 `;
-
-const props = {
-	height: "70vh",
-	alignItems: "center",
-	bottom: false,
-	zIndex: false
-};
-
-export default function Splash() {
-	return (
-		<SplashContainer>
-			<Title> FLOATING WORLD </Title>
-			<PageGlobe props={props} />
-		</SplashContainer>
-	);
-}

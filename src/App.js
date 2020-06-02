@@ -1,29 +1,17 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import { fadeOut } from "react-animations";
-import { createAnimation } from "./helpers/createAnimation";
+import { useLocation } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
 
 import Nav from "./components/Nav";
 import Splash from "./components/Splash";
 
+//styles
+import { theme, SplashContainer } from "./styles/global";
+
 import "./App.css";
 
-let fadeOutAnim = createAnimation(fadeOut, "1.2s");
-
-const SplashContainer = styled.div`
-	background-color: black;
-	color: white;
-	min-height: 100vh;
-	height: 100vh;
-	min-width: 100vw;
-	width: 100vw;
-	position: absolute;
-	z-index: 998;
-	top: 0;
-	left: 0;
-	${fadeOutAnim};
-	animation-delay: ${(props) => props.delay};
-`;
+//get the current route and if its not home then dont show splash.
+// do this in a use effect
 
 function App() {
 	const [ showSplash, setShowSplash ] = useState(true);
@@ -36,12 +24,14 @@ function App() {
 
 	return (
 		<div className="App">
-			<header className="App-header">{!showSplash && <Nav />}</header>
-			{showSplash && (
-				<SplashContainer delay="4s">
-					<Splash />
-				</SplashContainer>
-			)}
+			<ThemeProvider theme={theme}>
+				<header className="App-header">{!showSplash && <Nav />}</header>
+				{showSplash && (
+					<SplashContainer delay="4s">
+						<Splash />
+					</SplashContainer>
+				)}
+			</ThemeProvider>
 		</div>
 	);
 }

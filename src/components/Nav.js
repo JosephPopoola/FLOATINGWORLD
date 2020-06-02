@@ -5,7 +5,7 @@ import { fadeIn } from "react-animations";
 import { createAnimation } from "../helpers/createAnimation";
 
 import Home from "../pages/Home";
-import Joinus from "../pages/Joinus";
+import Joinus from "../pages/JoinUs";
 import Shows from "../pages/Shows";
 
 let fadeInAnim = createAnimation(fadeIn, "3s");

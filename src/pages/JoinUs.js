@@ -1,6 +1,4 @@
 import React from "react";
-import styled from "styled-components";
-
 import PageTitle from "../components/PageTitle";
 import PageGlobe from "../components/globe/PageGlobe";
 

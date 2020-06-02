@@ -1,13 +1,14 @@
 import React from "react";
 import styled, { keyframes, css } from "styled-components";
-import { fadeInUp } from "react-animations";
+import { slideInUp } from "react-animations";
 
 import { CanvasProvider } from "../../context/CanvasContext";
 
 import Scene from "./Scene";
+import { Globe } from "./Globe";
 
-const fadeInAnimation = keyframes`${fadeInUp}`;
-let fadeInAnim = css`animation: 3s ${fadeInAnimation};`;
+const fadeInAnimation = keyframes`${slideInUp}`;
+let fadeInAnim = css`animation: 4s ${fadeInAnimation};`;
 
 const FwContainer = styled.div`
 	${(props) => (props.zIndex ? "z-index: -1" : "")};
@@ -28,7 +29,9 @@ export default function PageGlobe(props) {
 	return (
 		<FwContainer gHeight={height} bottom={bottom} alignItems={alignItems} zIndex={zIndex}>
 			<CanvasProvider>
-				<Scene />
+				<Scene>
+					<Globe />
+				</Scene>
 			</CanvasProvider>
 		</FwContainer>
 	);
