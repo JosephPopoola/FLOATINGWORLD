@@ -16,8 +16,10 @@ const props = {
 export default function Splash() {
 	return (
 		<SplashContainer>
-			<Title floatTime={"7s"}>FLOATING</Title>
-			<Title floatTime={"7.2s"} reverse={true}>
+			<Title initial={{ y: -10 }} animate={{ y: 20 }} transition={{ duration: 7, ease: "easeInOut", yoyo: Infinity }}>
+				FLOATING
+			</Title>
+			<Title initial={{ y: 10 }} animate={{ y: -20 }} transition={{ duration: 7.2, ease: "easeInOut", yoyo: Infinity }}>
 				WORLD
 			</Title>
 			<PageGlobe props={props} />

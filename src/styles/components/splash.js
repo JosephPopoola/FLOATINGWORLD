@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import { fadeIn } from "react-animations";
-import { createAnimation } from "../../helpers/createAnimation";
-let fadeInAnim = createAnimation(fadeIn, "3s");
+import { motion } from "framer-motion";
 
-export const SplashContainer = styled.div`
+export const SplashContainer = styled(motion.div)`
 	min-height: 100vh;
 	height: 100%;
 	min-width: 100vw;
@@ -17,7 +15,7 @@ export const SplashContainer = styled.div`
 	position: relative;
 `;
 
-export const Title = styled.div`
+export const Title = styled(motion.div)`
     color: white
     margin: 20vh 30vw;
     font-size: 14.375em;
@@ -25,10 +23,8 @@ export const Title = styled.div`
     align-items: center;
     justify-content: center;
 	line-height: 1.8;
-	${fadeInAnim};
 	@media (max-width: 768px) {
 		font-size: 4.375em;
 		line-height: 7;
 	}
-	animation: float ${(props) => props.floatTime} ease-in-out infinite ${(props) => (props.reverse ? "reverse" : "")};
 `;

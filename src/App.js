@@ -16,11 +16,11 @@ import "./App.css";
 function App() {
 	const [ showSplash, setShowSplash ] = useState(true);
 
-	useEffect(() => {
-		setTimeout(() => {
-			setShowSplash(false);
-		}, 5000);
-	}, []);
+	// useEffect(() => {
+	// 	setTimeout(() => {
+	// 		setShowSplash(false);
+	// 	}, 5000);
+	// }, []);
 
 	return (
 		<div className="App">
