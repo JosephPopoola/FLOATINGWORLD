@@ -1,8 +1,4 @@
 import styled from "styled-components";
-import { fadeInUp } from "react-animations";
-import { createAnimation } from "../../helpers/createAnimation";
-
-let fadeInAnim = createAnimation(fadeInUp, "3s");
 
 export const HomeTileContainer = styled.div`
 	height: 45vh;
@@ -24,7 +20,6 @@ export const HomeTileContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-	${fadeInAnim} animation-fill-mode: forwards;
 `;
 
 export const TileTitle = styled.div`
