@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { fadeInUp } from "react-animations";
 import { createAnimation } from "../../helpers/createAnimation";
+import { motion } from "framer-motion";
 
 let fadeInAnim = createAnimation(fadeInUp, "3s");
 
@@ -49,7 +50,20 @@ export const ShowTile = styled.div`
 	animation-delay: 1.5s;
 `;
 
-export const ShowText = styled.div`
-	margin-top: -3vh;
-	height: 3vh;
+export const ShowText = styled(motion.div)`
+	position: relative;
+	color: black;
+	margin-top: -5vh;
+	font-weight: 600;
+	font-size: 2em;
+	opacity: 0;
+	${fadeInAnim} animation-fill-mode: forwards;
+	animation-delay: 2.5s;
+`;
+
+export const TileContainer = styled.div`
+	// padding-top: 5vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 `;

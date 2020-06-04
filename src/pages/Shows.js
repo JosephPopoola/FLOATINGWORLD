@@ -7,7 +7,7 @@ import PageGlobe from "../components/globe/PageGlobe";
 import useWindowSize from "../hooks/useWindowSize";
 
 //styles
-import { ShowsContainer, ShowTile, ShowText } from "../styles/pages/shows";
+import { ShowsContainer, ShowTile, ShowText, TileContainer } from "../styles/pages/shows";
 
 const wOptions = [ "30vw", "35vw", "45vw", "42vw", "33vw" ];
 const hOptions = [ "32vh", "44vh", "51vh", "59vh" ];
@@ -44,19 +44,18 @@ export default function Shows() {
 				<div className="inherit">
 					{SHOWS2.map((show, idx) => {
 						return (
-							<>
+							<TileContainer key={idx + show.text}>
 								<ShowTile
-									key={idx}
 									className="drop-shadow"
 									width={wOptions[Math.floor(Math.random() * wOptions.length)]}
 									height={hOptions[Math.floor(Math.random() * hOptions.length)]}
 									dangerouslySetInnerHTML={iframeContainer(show.iframe)}
 								/>
 								<ShowText>{show.text}</ShowText>
-							</>
+							</TileContainer>
 						);
 					})}
-					<div className="end-of-scroll">E</div>);
+					<div className="end-of-scroll">E</div>
 				</div>
 			);
 		}
@@ -64,16 +63,15 @@ export default function Shows() {
 			<HorizontalScroll pageLock={true}>
 				{SHOWS2.map((show, idx) => {
 					return (
-						<>
+						<TileContainer key={idx + show.text}>
 							<ShowTile
-								key={idx}
 								className="drop-shadow"
 								width={wOptions[Math.floor(Math.random() * wOptions.length)]}
 								height={hOptions[Math.floor(Math.random() * hOptions.length)]}
 								dangerouslySetInnerHTML={iframeContainer(show.iframe)}
 							/>
 							<ShowText>{show.text}</ShowText>
-						</>
+						</TileContainer>
 					);
 				})}
 				<div className="end-of-scroll">E</div>

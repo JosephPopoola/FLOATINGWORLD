@@ -66,6 +66,6 @@ export const Pop = () => (
 		style={styles}
 		initial={{ scale: 0 }}
 		animate={{ scale: 200 }}
-		transition={{ duration: 0.9, yoyo: 1, repeatDelay: 0.5, ease: "easeInOut" }}
+		transition={{ duration: 0.9, yoyo: 1, repeatDelay: 0.1, ease: "easeInOut" }}
 	/>
 );

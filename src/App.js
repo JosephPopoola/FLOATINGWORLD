@@ -30,7 +30,6 @@ function App() {
 	// store a enter state locally so splash doesnt show on every refresh
 
 	const globeClicked = useCallback(() => {
-		console.log("pim");
 		setShowPop(true);
 
 		setTimeout(() => {
