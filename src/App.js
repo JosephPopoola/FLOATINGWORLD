@@ -5,7 +5,8 @@ import Nav from "./components/Nav";
 import Splash from "./components/Splash";
 
 //styles
-import { theme, SplashContainer } from "./styles/global";
+import { theme } from "./styles/global";
+import { SplashContainer, PopContainer, Pop } from "./styles/components/splash";
 
 import "./App.css";
 
@@ -14,6 +15,7 @@ import "./App.css";
 
 function App() {
 	const [ showSplash, setShowSplash ] = useState(true);
+	const [ showPop, setShowPop ] = useState(false);
 
 	// useEffect(() => {
 	// 	setTimeout(() => {
@@ -27,24 +29,24 @@ function App() {
 	// maybe welcome text after click?
 	// store a enter state locally so splash doesnt show on every refresh
 
-	// const globeClicked = useCallback(() => {
-	// 	console.log("pim");
-	// 	setShowSplash(false);
-	// }, []);
-
-	const globeClicked = () => {
+	const globeClicked = useCallback(() => {
 		console.log("pim");
-		setShowSplash(false);
-	};
+		setShowPop(true);
+
+		setTimeout(() => {
+			setShowSplash(false);
+		}, 1000);
+	}, []);
 
 	return (
 		<div className="App">
 			<ThemeProvider theme={theme}>
 				<header className="App-header">{!showSplash && <Nav />}</header>
-				{showSplash && (
-					<SplashContainer delay="4s">
-						<Splash globeClicked={globeClicked} />
-					</SplashContainer>
+				{showSplash && <Splash globeClicked={globeClicked} />}
+				{showPop && (
+					<PopContainer>
+						<Pop />
+					</PopContainer>
 				)}
 			</ThemeProvider>
 		</div>

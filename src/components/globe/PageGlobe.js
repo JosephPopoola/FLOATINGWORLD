@@ -30,7 +30,7 @@ export default function PageGlobe(props) {
 		<FwContainer gHeight={height} bottom={bottom} alignItems={alignItems} zIndex={zIndex}>
 			<CanvasProvider>
 				<Scene>
-					<Globe globeClicked={globeClicked} onClick={(e) => globeClicked()} />
+					<Globe onClick={(e) => globeClicked()} />
 				</Scene>
 			</CanvasProvider>
 		</FwContainer>
