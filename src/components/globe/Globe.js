@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useMemo } from "react";
 import { useFrame } from "react-three-fiber";
 import EarthClouds from "../../assets/URF4.jpeg";
 import urf from "../../assets/URF4.jpeg";
@@ -13,8 +13,9 @@ export function Globe(props) {
 
 	//	roughness: 0.9,
 	//	metalness: 9,
+
 	// globe geometry & material
-	const globeGeo = new SphereGeometry(1.5, sphereSize, sphereSize);
+	const globeGeo = useMemo(() => new SphereGeometry(1.5, sphereSize, sphereSize), []);
 	globeGeo.computeBoundingBox();
 	const fwTexture = useLoader(TextureLoader, urf);
 	fwTexture.minFilter = LinearFilter;
@@ -23,10 +24,10 @@ export function Globe(props) {
 		bumpScale: 10,
 		map: fwTexture
 	};
-	const globeMat = new MeshPhongMaterial(globeMatParams);
+	const globeMat = useMemo(() => new MeshPhongMaterial(globeMatParams), [ globeMatParams ]);
 
 	// atmos geo & material
-	const atmosGeo = new SphereGeometry(1.51, sphereSize, sphereSize);
+	const atmosGeo = useMemo(() => new SphereGeometry(1.51, sphereSize, sphereSize), []);
 	atmosGeo.computeBoundingBox();
 	const atmosTexture = useLoader(TextureLoader, EarthClouds);
 	atmosTexture.minFilter = LinearFilter;
@@ -37,10 +38,24 @@ export function Globe(props) {
 		depthWrite: false,
 		map: atmosTexture
 	};
-	const atmosMat = new MeshPhongMaterial(atmosMatParams);
+	const atmosMat = useMemo(() => new MeshPhongMaterial(atmosMatParams), [ atmosMatParams ]);
 
 	useFrame(() => (fwMesh.current.rotation.y += 0.0001));
 	useFrame(() => (cloudMesh.current.rotation.y = cloudMesh.current.rotation.y += 0.000111));
+
+	const loggy = (e) => {
+		console.log(e);
+		console.log(props.globeClicked);
+		// e.stopPropagation();
+	};
+
+	// const handleClick = props.globeClicked;
+	// console.log(handleClick);
+
+	// onClick={(e) => console.log("testt")}
+	// onPointerOver={(e) => console.log("testt")}
+
+	// onPointerOver={(e) => loggy(e)} onPointerDown={(e) => props.globeClicked()}
 
 	return (
 		<group position={[ 0, 0.1, 0.1 ]}>

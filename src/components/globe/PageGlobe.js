@@ -24,13 +24,13 @@ const FwContainer = styled.div`
 `;
 
 export default function PageGlobe(props) {
-	const { height, bottom, alignItems, zIndex } = props.props;
+	const { height, bottom, alignItems, zIndex, globeClicked } = props.props;
 
 	return (
 		<FwContainer gHeight={height} bottom={bottom} alignItems={alignItems} zIndex={zIndex}>
 			<CanvasProvider>
 				<Scene>
-					<Globe />
+					<Globe globeClicked={globeClicked} onClick={(e) => globeClicked()} />
 				</Scene>
 			</CanvasProvider>
 		</FwContainer>

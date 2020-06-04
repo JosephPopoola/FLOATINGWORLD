@@ -34,12 +34,12 @@ export const PageTitleContainer = styled.div`
 	width: 100%;
 	display: flex;
 	align-items: center;
-	@media (max-width: 768px) {
-		font-size: 10.375em;
-	}
 `;
 
 export const Text = styled.span`
 	position: relative;
 	font-size: 14.375em;
+	@media (max-width: 768px) {
+		font-size: 10.375em;
+	}
 `;

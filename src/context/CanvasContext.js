@@ -10,7 +10,7 @@ let cc = css`
 	min-height: 100vh;
 	height: 100vh;
 	position: fixed;
-	z-index: -1;
+	z-index: 99;
 `;
 
 function CanvasProvider({ children }) {

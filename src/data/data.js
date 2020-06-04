@@ -44,3 +44,21 @@ export const SHOWS = [
 	'<iframe width="100%" height="100%" src="https://www.mixcloud.com/widget/iframe/?feed=%2Fbalamii%2Ffloating-world-radio-w-eldon-march-2020%2F" frameborder="0" ></iframe>',
 	'<iframe width="100%" height="100%" src="https://www.mixcloud.com/widget/iframe/?feed=%2Fbalamii%2Ffloating-world-radio-w-eldon-april-2020%2F" frameborder="0" ></iframe>'
 ].reverse();
+
+export const SHOWS2 = [
+	{
+		iframe:
+			'<iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/801510235&color=%23464646&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"></div>',
+		text: "003"
+	},
+	{
+		iframe:
+			'<iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/801510235&color=%23464646&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"></div>',
+		text: "002"
+	},
+	{
+		iframe:
+			'<iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/753281704&color=%23464646&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"></div>',
+		text: "001"
+	}
+].reverse();

@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const HomeTileContainer = styled.div`
+export const HomeTileContainer = styled(motion.div)`
 	height: 45vh;
 	min-height: 45vh;
 	max-height: 45vh;
@@ -22,7 +23,7 @@ export const HomeTileContainer = styled.div`
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 `;
 
-export const TileTitle = styled.div`
+export const TileTitle = styled(motion.div)`
 	font-size: 2em;
 	font-weight: 300;
 	@media (max-width: 768px) {

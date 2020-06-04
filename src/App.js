@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect, useCallback } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Nav from "./components/Nav";
@@ -22,13 +21,29 @@ function App() {
 	// 	}, 5000);
 	// }, []);
 
+	// function that sets splash state
+	// triggers pop animation
+	// pop animation happens, delay for 1.5s then yoyo: 1
+	// maybe welcome text after click?
+	// store a enter state locally so splash doesnt show on every refresh
+
+	// const globeClicked = useCallback(() => {
+	// 	console.log("pim");
+	// 	setShowSplash(false);
+	// }, []);
+
+	const globeClicked = () => {
+		console.log("pim");
+		setShowSplash(false);
+	};
+
 	return (
 		<div className="App">
 			<ThemeProvider theme={theme}>
 				<header className="App-header">{!showSplash && <Nav />}</header>
 				{showSplash && (
 					<SplashContainer delay="4s">
-						<Splash />
+						<Splash globeClicked={globeClicked} />
 					</SplashContainer>
 				)}
 			</ThemeProvider>

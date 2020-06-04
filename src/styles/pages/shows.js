@@ -6,7 +6,7 @@ let fadeInAnim = createAnimation(fadeInUp, "3s");
 
 export const ShowsContainer = styled.div`
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	height: 70vh;
 	margin: 15vh 0;
 	align-self: center;
@@ -47,4 +47,9 @@ export const ShowTile = styled.div`
 	opacity: 0;
 	${fadeInAnim} animation-fill-mode: forwards;
 	animation-delay: 1.5s;
+`;
+
+export const ShowText = styled.div`
+	margin-top: -3vh;
+	height: 3vh;
 `;

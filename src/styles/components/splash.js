@@ -23,6 +23,7 @@ export const Title = styled(motion.div)`
     align-items: center;
     justify-content: center;
 	line-height: 1.8;
+	z-index: 0;
 	@media (max-width: 768px) {
 		font-size: 4.375em;
 		line-height: 7;
