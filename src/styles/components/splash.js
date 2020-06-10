@@ -45,7 +45,8 @@ export const Title = styled(motion.div)`
 	z-index: 0;
 	@media (max-width: 768px) {
 		font-size: 4.375em;
-		line-height: 7;
+		line-height: 5;
+		${(props) => (props.top ? "margin-top: -17vh" : "margin-top: 26vh")};
 	}
 `;
 
@@ -54,6 +55,9 @@ export const TitleContainer = styled(motion.div)`
 	min-height: 100%;
 	height: 100%;
 	width: 100%;
+	position: inherit;
+	top: inherit;
+	left: inherit;
 `;
 
 const styles = {

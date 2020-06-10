@@ -55,6 +55,7 @@ export default function Splash(props) {
 						className="no-select"
 						variants={floatingVariants}
 						transition={floatingTransition}
+						top={true}
 					>
 						FLOATING
 					</Title>
@@ -62,6 +63,7 @@ export default function Splash(props) {
 						className="no-select"
 						variants={worldVariants}
 						transition={floatingTransition}
+						top={false}
 					>
 						WORLD
 					</Title>
