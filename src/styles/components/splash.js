@@ -49,6 +49,13 @@ export const Title = styled(motion.div)`
 	}
 `;
 
+export const TitleContainer = styled(motion.div)`
+	min-width: 100%;
+	min-height: 100%;
+	height: 100%;
+	width: 100%;
+`;
+
 const styles = {
 	background: "black",
 	zIndex: 999,

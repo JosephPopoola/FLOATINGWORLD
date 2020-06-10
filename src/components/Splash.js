@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 //components
 import PageGlobe from "./globe/PageGlobe";
 
 // styles
-import { SplashContainer, Title } from "../styles/components/splash";
+import { SplashContainer, Title, TitleContainer } from "../styles/components/splash";
 
 let globeProps = {
 	height: "70vh",
@@ -13,27 +13,67 @@ let globeProps = {
 	zIndex: false
 };
 
+// animate={{ opacity: 1 }} transition={{ duration: 2, staggerChildren: 0.5 }}>
+
 export default function Splash(props) {
 	globeProps.globeClicked = props.globeClicked;
 
+	const [ show, setShow ] = useState(false);
+
+	setTimeout(() => {
+		setShow(true);
+	}, 3500);
+
+	const transition = { duration: 3, ease: "easeInOut", staggerChildren: 2 };
+
+	const variants = {
+		visible: { opacity: 1, transition },
+		hidden: { opacity: 0, transition }
+	};
+
+	const floatingTransition = { duration: 7, ease: "easeInOut", yoyo: Infinity };
+
+	const floatingVariants = {
+		visible: { opacity: 1, y: 20 },
+		hidden: { opacity: 0, y: -10 }
+	}
+
+	const worldVariants = {
+		visible: { opacity: 1, y: -20 },
+		hidden: { opacity: 0, y: 10 }
+	}
+
+	function ShowTitle() {
+		if (show) {
+			return (
+				<TitleContainer         
+					variants={variants}
+					initial="hidden"
+					animate="visible"
+					transition={transition}>
+					<Title
+						className="no-select"
+						variants={floatingVariants}
+						transition={floatingTransition}
+					>
+						FLOATING
+					</Title>
+					<Title
+						className="no-select"
+						variants={worldVariants}
+						transition={floatingTransition}
+					>
+						WORLD
+					</Title>
+				</TitleContainer>
+			);
+		}
+		return <></>;
+	}
+
 	return (
 		<SplashContainer>
-			<Title
-				className="no-select"
-				initial={{ y: -10 }}
-				animate={{ y: 20 }}
-				transition={{ duration: 7, ease: "easeInOut", yoyo: Infinity }}
-			>
-				FLOATING
-			</Title>
-			<Title
-				className="no-select"
-				initial={{ y: 10 }}
-				animate={{ y: -20 }}
-				transition={{ duration: 7.2, ease: "easeInOut", yoyo: Infinity }}
-			>
-				WORLD
-			</Title>
+			<ShowTitle />
 			<PageGlobe props={globeProps} />
 		</SplashContainer>
 	);
