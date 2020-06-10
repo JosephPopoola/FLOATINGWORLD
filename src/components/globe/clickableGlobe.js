@@ -18,8 +18,8 @@ export const ClickableGlobe = styled.div`
     border-radius: 999px;
     z-index: 999999; !imprortant;
     @media (max-width: 768px) {
-        width: 420px;
-        height: 420px;
+        width: 370px;
+        height: 370px;
 	}
 `;
 
