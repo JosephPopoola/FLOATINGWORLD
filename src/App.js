@@ -30,8 +30,10 @@ function App() {
 	// store a enter state locally so splash doesnt show on every refresh
 
 	const globeClicked = useCallback((e) => {
-		e.stopPropagation();
-		e.target.setPointerCapture(e.pointerId);
+		if (e) {
+			e.stopPropagation();
+			e.target.setPointerCapture(e.pointerId);
+		}
 		setShowPop(true);
 
 		setTimeout(() => {

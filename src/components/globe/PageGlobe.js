@@ -4,6 +4,8 @@ import { slideInUp } from "react-animations";
 
 import { Canvas } from "react-three-fiber";
 
+import ClickGlobe from "./clickableGlobe";
+
 import Scene from "./Scene";
 import { Globe } from "./Globe";
 
@@ -17,6 +19,9 @@ const FwContainer = styled.div`
 	position: absolute;
 	align-items: ${(props) => (props.alignItems ? props.alignItems : "flex-end")};
 	${(props) => (props.bottom ? "bottom: -65%" : "")};
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	${fadeInAnim};
 	@media (max-width: 768px) {
 		${(props) => (props.bottom ? "bottom: -75%" : "")};
@@ -44,14 +49,10 @@ export default function PageGlobe(props) {
 		<FwContainer gHeight={height} bottom={bottom} alignItems={alignItems} zIndex={zIndex}>
 			<Canvas className={cc}>
 				<Scene>
-					<Globe
-						onPointerDown={(e) => globeClicked(e)}
-						onClick={(e) => globeClicked(e)}
-						onPointerUp={(e) => onPointerUp(e)}
-						onPointerOver={(e) => console.log("hover")}
-					/>
+					<Globe />
 				</Scene>
 			</Canvas>
+			<ClickGlobe globeClicked={globeClicked} />
 		</FwContainer>
 	);
 }

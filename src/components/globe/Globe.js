@@ -44,7 +44,7 @@ export function Globe(props) {
 	useFrame(() => (cloudMesh.current.rotation.y = cloudMesh.current.rotation.y += 0.000111));
 
 	return (
-		<group position={[ 0, 0.1, 0.1 ]}>
+		<group position={[ 0, 0, 0.1 ]}>
 			<mesh {...props} ref={fwMesh} args={[ globeGeo, globeMat ]} />
 			<mesh {...props} ref={cloudMesh} args={[ atmosGeo, atmosMat ]} />
 		</group>
