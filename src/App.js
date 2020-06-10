@@ -29,7 +29,9 @@ function App() {
 	// maybe welcome text after click?
 	// store a enter state locally so splash doesnt show on every refresh
 
-	const globeClicked = useCallback(() => {
+	const globeClicked = useCallback((e) => {
+		e.stopPropagation();
+		e.target.setPointerCapture(e.pointerId);
 		setShowPop(true);
 
 		setTimeout(() => {
@@ -38,7 +40,7 @@ function App() {
 	}, []);
 
 	return (
-		<div className="App">
+		<div className="App" touch-action="none">
 			<ThemeProvider theme={theme}>
 				<header className="App-header">{!showSplash && <Nav />}</header>
 				{showSplash && <Splash globeClicked={globeClicked} />}

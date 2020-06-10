@@ -32,6 +32,11 @@ let cc = css`
 	z-index: 99;
 `;
 
+const onPointerUp = (e) => {
+	e.stopPropagation();
+	e.target.releasePointerCapture(e.pointerId);
+};
+
 export default function PageGlobe(props) {
 	const { height, bottom, alignItems, zIndex, globeClicked } = props.props;
 
@@ -39,7 +44,12 @@ export default function PageGlobe(props) {
 		<FwContainer gHeight={height} bottom={bottom} alignItems={alignItems} zIndex={zIndex}>
 			<Canvas className={cc}>
 				<Scene>
-					<Globe className="pointer" onClick={(e) => globeClicked()} />
+					<Globe
+						onPointerDown={(e) => globeClicked(e)}
+						onClick={(e) => globeClicked(e)}
+						onPointerUp={(e) => onPointerUp(e)}
+						onPointerOver={(e) => console.log("hover")}
+					/>
 				</Scene>
 			</Canvas>
 		</FwContainer>
