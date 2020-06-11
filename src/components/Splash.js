@@ -24,23 +24,23 @@ export default function Splash(props) {
 		setShow(true);
 	}, 3500);
 
-	const transition = { duration: 3, ease: "easeInOut", staggerChildren: 2 };
+	const transition = { duration: 5, ease: "easeInOut", staggerChildren: 2 };
 
 	const variants = {
-		visible: { opacity: 1, transition },
-		hidden: { opacity: 0, transition }
+		visible: { transition },
+		hidden: {  transition }
 	};
 
 	const floatingTransition = { duration: 7, ease: "easeInOut", yoyo: Infinity };
 
 	const floatingVariants = {
 		visible: { opacity: 1, y: 20 },
-		hidden: { opacity: 1, y: -10 }
+		hidden: { opacity: 0, y: -10 }
 	}
 
 	const worldVariants = {
 		visible: { opacity: 1, y: -20 },
-		hidden: { opacity: 1, y: 10 }
+		hidden: { opacity: 0, y: 10 }
 	}
 
 	function ShowTitle() {

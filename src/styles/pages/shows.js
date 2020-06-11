@@ -19,7 +19,6 @@ export const ShowsContainer = styled.div`
 		display: none;
 	}
 	@media (max-width: 768px) {
-		height: 80vh;
 		margin: 10vh 0;
 		padding-top: 0vh;
 	}
@@ -34,7 +33,6 @@ export const ShowTile = styled.div`
 	min-height: ${(props) => props.height};
 	margin: 10vw;
 	box-sizing: border-box;
-	// justify-content: center;
 	align-self: flex-start;
 	alight-content: flex-start;
 	&:nth-child(2n-7) {
@@ -53,12 +51,17 @@ export const ShowTile = styled.div`
 export const ShowText = styled(motion.div)`
 	position: relative;
 	color: black;
-	margin-top: -5vh;
+	margin-top: -10vh;
 	font-weight: 600;
 	font-size: 2em;
+	width: 100%;
+    padding-left: 20vw;
 	opacity: 0;
 	${fadeInAnim} animation-fill-mode: forwards;
 	animation-delay: 2.5s;
+	@media (max-width: 768px) {
+		margin-top: -5vh;
+	}
 `;
 
 export const TileContainer = styled.div`
@@ -66,4 +69,14 @@ export const TileContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	align-self: flex-start;
+	x: flex-start;
+	&:nth-child(2n-7) {
+		align-self: center;
+		alight-content: center;
+	}
+	&:nth-child(3n) {
+		align-self: flex-end;
+		alight-content: flex-end;
+	}
 `;

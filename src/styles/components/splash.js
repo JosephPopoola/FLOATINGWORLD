@@ -36,18 +36,22 @@ export const PopContainer = styled(motion.div)`
 
 export const Title = styled(motion.div)`
     color: black;
-    margin: 20vh 30vw;
     font-size: 14.375em;
     display: flex;
     align-items: center;
     justify-content: center;
-	line-height: 1.8;
 	z-index: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	@media (max-width: 1000px) {
+		font-size: 10.375em;
+	}
 	@media (max-width: 768px) {
 		font-size: 4.375em;
 		line-height: 5;
 		${(props) => (props.top ? "margin-top: -17vh" : "margin-top: 26vh")};
-		position: absolute;
 		top: 5vh;
 		left: 0;
 		right: 0;
@@ -56,18 +60,22 @@ export const Title = styled(motion.div)`
 
 export const Title1 = styled(motion.div)`
     color: black;
-    margin: 20vh 30vw;
     font-size: 14.375em;
     display: flex;
     align-items: center;
     justify-content: center;
-	line-height: 1.8;
 	z-index: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	@media (max-width: 1000px) {
+		font-size: 10.375em;
+	}
 	@media (max-width: 768px) {
 		font-size: 4.375em;
 		line-height: 5;
-		position: absolute;
-		bottom: -31vh;
+		bottom: -15vh;
 		left: 0;
 		right: 0;
 	}
