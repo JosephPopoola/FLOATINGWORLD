@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 export const SplashContainer = styled(motion.div)`
-	background-color: black;
+	background-color: white;
 	color: white;
 	min-height: 100vh;
 	height: 100vh;
@@ -35,7 +35,7 @@ export const PopContainer = styled(motion.div)`
 `;
 
 export const Title = styled(motion.div)`
-    color: white
+    color: black;
     margin: 20vh 30vw;
     font-size: 14.375em;
     display: flex;
@@ -47,6 +47,29 @@ export const Title = styled(motion.div)`
 		font-size: 4.375em;
 		line-height: 5;
 		${(props) => (props.top ? "margin-top: -17vh" : "margin-top: 26vh")};
+		position: absolute;
+		top: 5vh;
+		left: 0;
+		right: 0;
+	}
+`;
+
+export const Title1 = styled(motion.div)`
+    color: black;
+    margin: 20vh 30vw;
+    font-size: 14.375em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	line-height: 1.8;
+	z-index: 0;
+	@media (max-width: 768px) {
+		font-size: 4.375em;
+		line-height: 5;
+		position: absolute;
+		bottom: -31vh;
+		left: 0;
+		right: 0;
 	}
 `;
 

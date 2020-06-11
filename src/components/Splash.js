@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import PageGlobe from "./globe/PageGlobe";
 
 // styles
-import { SplashContainer, Title, TitleContainer } from "../styles/components/splash";
+import { SplashContainer, Title, Title1, TitleContainer } from "../styles/components/splash";
 
 let globeProps = {
 	height: "70vh",
@@ -35,12 +35,12 @@ export default function Splash(props) {
 
 	const floatingVariants = {
 		visible: { opacity: 1, y: 20 },
-		hidden: { opacity: 0, y: -10 }
+		hidden: { opacity: 1, y: -10 }
 	}
 
 	const worldVariants = {
 		visible: { opacity: 1, y: -20 },
-		hidden: { opacity: 0, y: 10 }
+		hidden: { opacity: 1, y: 10 }
 	}
 
 	function ShowTitle() {
@@ -59,14 +59,14 @@ export default function Splash(props) {
 					>
 						FLOATING
 					</Title>
-					<Title
+					<Title1
 						className="no-select"
 						variants={worldVariants}
 						transition={floatingTransition}
 						top={false}
 					>
 						WORLD
-					</Title>
+					</Title1>
 				</TitleContainer>
 			);
 		}
