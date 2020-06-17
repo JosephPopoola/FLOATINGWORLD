@@ -1,5 +1,5 @@
 //create a theme that hold the main colours for the site
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { fadeOut } from "react-animations";
 import { createAnimation } from "../helpers/createAnimation";
 

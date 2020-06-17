@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 //components
 import PageGlobe from "./globe/PageGlobe";
@@ -12,8 +12,6 @@ let globeProps = {
 	bottom: false,
 	zIndex: false
 };
-
-// animate={{ opacity: 1 }} transition={{ duration: 2, staggerChildren: 0.5 }}>
 
 export default function Splash(props) {
 	globeProps.globeClicked = props.globeClicked;

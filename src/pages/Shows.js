@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import HorizontalScroll from "react-scroll-horizontal";
 
-import { SHOWS, SHOWS2 } from "../data/data";
+import { SHOWS2 } from "../data/data";
 import PageTitle from "../components/PageTitle";
 import PageGlobe from "../components/globe/PageGlobe";
 import useWindowSize from "../hooks/useWindowSize";

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { ThemeProvider } from "styled-components";
 
 import Nav from "./components/Nav";
@@ -6,7 +6,7 @@ import Splash from "./components/Splash";
 
 //styles
 import { theme } from "./styles/global";
-import { SplashContainer, PopContainer, Pop } from "./styles/components/splash";
+import { PopContainer, Pop } from "./styles/components/splash";
 
 import "./App.css";
 
@@ -16,12 +16,6 @@ import "./App.css";
 function App() {
 	const [ showSplash, setShowSplash ] = useState(true);
 	const [ showPop, setShowPop ] = useState(false);
-
-	// useEffect(() => {
-	// 	setTimeout(() => {
-	// 		setShowSplash(false);
-	// 	}, 5000);
-	// }, []);
 
 	// function that sets splash state
 	// triggers pop animation

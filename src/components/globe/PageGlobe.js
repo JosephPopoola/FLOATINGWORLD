@@ -39,11 +39,6 @@ let cc = css`
 	z-index: 99;
 `;
 
-const onPointerUp = (e) => {
-	e.stopPropagation();
-	e.target.releasePointerCapture(e.pointerId);
-};
-
 export default function PageGlobe(props) {
 	const { height, bottom, alignItems, zIndex, globeClicked } = props.props;
 
