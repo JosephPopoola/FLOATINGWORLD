@@ -60,17 +60,17 @@ export default function Shows() {
 			);
 		}
 		return (
-			<HorizontalScroll pageLock={true}>
+			<HorizontalScroll pageLock={true} className="padd-top">
 				{SHOWS2.map((show, idx) => {
 					return (
 						<TileContainer key={idx + show.text}>
+							<ShowText>{show.text}</ShowText>
 							<ShowTile
 								className="drop-shadow"
 								width={wOptions[Math.floor(Math.random() * wOptions.length)]}
 								height={hOptions[Math.floor(Math.random() * hOptions.length)]}
 								dangerouslySetInnerHTML={iframeContainer(show.iframe)}
 							/>
-							<ShowText>{show.text}</ShowText>
 						</TileContainer>
 					);
 				})}

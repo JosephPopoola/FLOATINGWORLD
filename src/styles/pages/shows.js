@@ -31,7 +31,9 @@ export const ShowTile = styled.div`
 	min-width: ${(props) => props.width};
 	height: ${(props) => props.height};
 	min-height: ${(props) => props.height};
-	margin: 10vw;
+	margin: 0 10vw;
+	// margin-left: 10vw;
+	margin-top: 2vh;
 	box-sizing: border-box;
 	align-self: flex-start;
 	alight-content: flex-start;
@@ -65,7 +67,6 @@ export const ShowText = styled(motion.div)`
 `;
 
 export const TileContainer = styled.div`
-	// padding-top: 5vh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
